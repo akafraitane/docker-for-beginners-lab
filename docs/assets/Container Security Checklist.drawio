@@ -1,0 +1,343 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0" version="29.4.0">
+  <diagram name="Container Security Checklist" id="security-checklist">
+    <mxGraphModel dx="998" dy="697" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1600" pageHeight="1100" background="#FAFAFA" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title-bar" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0078D4;strokeColor=none;arcSize=4;" value="" vertex="1">
+          <mxGeometry height="60" width="1520" x="40" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="title-text" parent="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=22;fontColor=#FFFFFF;fontStyle=1;" value="Container Security Checklist" vertex="1">
+          <mxGeometry height="40" width="400" x="560" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="section-universal" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=14;fontColor=#8A8886;fontStyle=1;" value="Universal (any runtime)" vertex="1">
+          <mxGeometry height="25" width="200" x="40" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="section-universal-line" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E1E1E1;strokeColor=none;" value="" vertex="1">
+          <mxGeometry height="1" width="900" x="210" y="112" as="geometry" />
+        </mxCell>
+        <mxCell id="img-card" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E1E1E1;shadow=1;arcSize=6;" value="" vertex="1">
+          <mxGeometry height="490" width="360" x="40" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="img-accent" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#0078D4;strokeColor=none;" value="" vertex="1">
+          <mxGeometry height="490" width="5" x="40" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="img-header" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=18;fontColor=#242424;fontStyle=1;" value="Image Security" vertex="1">
+          <mxGeometry height="35" width="200" x="65" y="143" as="geometry" />
+        </mxCell>
+        <mxCell id="img-sub" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=11;fontColor=#8A8886;" value="Supply chain and base image hygiene" vertex="1">
+          <mxGeometry height="20" width="250" x="65" y="175" as="geometry" />
+        </mxCell>
+        <mxCell id="img-sep" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E1E1E1;strokeColor=none;" value="" vertex="1">
+          <mxGeometry height="1" width="310" x="65" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="img-c1-box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#0078D4;strokeWidth=1.5;" value="" vertex="1">
+          <mxGeometry height="16" width="16" x="68" y="218" as="geometry" />
+        </mxCell>
+        <mxCell id="img-c1" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=12;fontColor=#242424;" value="Use specific image tags (not :latest)" vertex="1">
+          <mxGeometry height="25" width="260" x="92" y="213" as="geometry" />
+        </mxCell>
+        <mxCell id="img-c2-box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#0078D4;strokeWidth=1.5;" value="" vertex="1">
+          <mxGeometry height="16" width="16" x="68" y="248" as="geometry" />
+        </mxCell>
+        <mxCell id="img-c2" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=12;fontColor=#242424;" value="Use official or verified images" vertex="1">
+          <mxGeometry height="25" width="230" x="92" y="243" as="geometry" />
+        </mxCell>
+        <mxCell id="img-c3-box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#0078D4;strokeWidth=1.5;" value="" vertex="1">
+          <mxGeometry height="16" width="16" x="68" y="278" as="geometry" />
+        </mxCell>
+        <mxCell id="img-c3" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=12;fontColor=#242424;" value="Scan images for vulnerabilities" vertex="1">
+          <mxGeometry height="25" width="240" x="92" y="273" as="geometry" />
+        </mxCell>
+        <mxCell id="img-c4-box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#0078D4;strokeWidth=1.5;" value="" vertex="1">
+          <mxGeometry height="16" width="16" x="68" y="308" as="geometry" />
+        </mxCell>
+        <mxCell id="img-c4" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=12;fontColor=#242424;" value="Use minimal base images (alpine, distroless)" vertex="1">
+          <mxGeometry height="25" width="300" x="92" y="303" as="geometry" />
+        </mxCell>
+        <mxCell id="img-c5-box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#0078D4;strokeWidth=1.5;" value="" vertex="1">
+          <mxGeometry height="16" width="16" x="68" y="338" as="geometry" />
+        </mxCell>
+        <mxCell id="img-c5" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=12;fontColor=#242424;" value="Remove unnecessary packages" vertex="1">
+          <mxGeometry height="25" width="220" x="92" y="333" as="geometry" />
+        </mxCell>
+        <mxCell id="img-c6-box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#0078D4;strokeWidth=1.5;" value="" vertex="1">
+          <mxGeometry height="16" width="16" x="68" y="368" as="geometry" />
+        </mxCell>
+        <mxCell id="img-c6" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=12;fontColor=#242424;" value="Never include secrets in images" vertex="1">
+          <mxGeometry height="25" width="230" x="92" y="363" as="geometry" />
+        </mxCell>
+        <mxCell id="img-c7-box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#0078D4;strokeWidth=1.5;" value="" vertex="1">
+          <mxGeometry height="16" width="16" x="68" y="398" as="geometry" />
+        </mxCell>
+        <mxCell id="img-c7" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=12;fontColor=#242424;" value="Sign and verify image provenance" vertex="1">
+          <mxGeometry height="25" width="240" x="92" y="393" as="geometry" />
+        </mxCell>
+        <mxCell id="img-why-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EFF6FC;strokeColor=none;arcSize=10;" value="" vertex="1">
+          <mxGeometry height="50" width="310" x="65" y="435" as="geometry" />
+        </mxCell>
+        <mxCell id="img-why-title" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=11;fontColor=#0078D4;fontStyle=1;" value="Why it matters" vertex="1">
+          <mxGeometry height="20" width="110" x="78" y="438" as="geometry" />
+        </mxCell>
+        <mxCell id="img-why" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=11;fontColor=#605E5C;fontStyle=2;" value="A compromised or bloated base image is the&lt;br&gt;most common entry point for container exploits" vertex="1">
+          <mxGeometry height="30" width="300" x="78" y="458" as="geometry" />
+        </mxCell>
+        <mxCell id="img-cmd-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#E1E1E1;arcSize=10;" value="" vertex="1">
+          <mxGeometry height="100" width="310" x="65" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="img-cmd-l" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Consolas;fontSize=11;fontColor=#8A8886;" value="# Dockerfile" vertex="1">
+          <mxGeometry height="22" width="110" x="78" y="508" as="geometry" />
+        </mxCell>
+        <mxCell id="img-cmd1" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Consolas;fontSize=11;fontColor=#107C10;" value="FROM python:3.12-slim" vertex="1">
+          <mxGeometry height="22" width="190" x="78" y="530" as="geometry" />
+        </mxCell>
+        <mxCell id="img-cmd2" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Consolas;fontSize=11;fontColor=#D13438;" value="# not FROM python:latest" vertex="1">
+          <mxGeometry height="22" width="200" x="78" y="552" as="geometry" />
+        </mxCell>
+        <mxCell id="img-cmd3" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Consolas;fontSize=11;fontColor=#D13438;" value="# not FROM python" vertex="1">
+          <mxGeometry height="22" width="160" x="78" y="572" as="geometry" />
+        </mxCell>
+        <mxCell id="rt-card" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E1E1E1;shadow=1;arcSize=6;" value="" vertex="1">
+          <mxGeometry height="490" width="360" x="420" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="rt-accent" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#107C10;strokeColor=none;" value="" vertex="1">
+          <mxGeometry height="490" width="5" x="420" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="rt-header" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=18;fontColor=#242424;fontStyle=1;" value="Runtime Security" vertex="1">
+          <mxGeometry height="35" width="200" x="445" y="143" as="geometry" />
+        </mxCell>
+        <mxCell id="rt-sub" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=11;fontColor=#8A8886;" value="Principle of least privilege at runtime" vertex="1">
+          <mxGeometry height="20" width="250" x="445" y="175" as="geometry" />
+        </mxCell>
+        <mxCell id="rt-sep" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E1E1E1;strokeColor=none;" value="" vertex="1">
+          <mxGeometry height="1" width="310" x="445" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="rt-c1-box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#107C10;strokeWidth=1.5;" value="" vertex="1">
+          <mxGeometry height="16" width="16" x="448" y="218" as="geometry" />
+        </mxCell>
+        <mxCell id="rt-c1" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=12;fontColor=#242424;" value="Run as non-root user" vertex="1">
+          <mxGeometry height="25" width="160" x="472" y="213" as="geometry" />
+        </mxCell>
+        <mxCell id="rt-c2-box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#107C10;strokeWidth=1.5;" value="" vertex="1">
+          <mxGeometry height="16" width="16" x="448" y="248" as="geometry" />
+        </mxCell>
+        <mxCell id="rt-c2" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=12;fontColor=#242424;" value="Use read-only root filesystem" vertex="1">
+          <mxGeometry height="25" width="220" x="472" y="243" as="geometry" />
+        </mxCell>
+        <mxCell id="rt-c3-box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#107C10;strokeWidth=1.5;" value="" vertex="1">
+          <mxGeometry height="16" width="16" x="448" y="278" as="geometry" />
+        </mxCell>
+        <mxCell id="rt-c3" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=12;fontColor=#242424;" value="Drop unnecessary capabilities" vertex="1">
+          <mxGeometry height="25" width="230" x="472" y="273" as="geometry" />
+        </mxCell>
+        <mxCell id="rt-c4-box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#107C10;strokeWidth=1.5;" value="" vertex="1">
+          <mxGeometry height="16" width="16" x="448" y="308" as="geometry" />
+        </mxCell>
+        <mxCell id="rt-c4" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=12;fontColor=#242424;" value="Set resource limits (memory, CPU)" vertex="1">
+          <mxGeometry height="25" width="250" x="472" y="303" as="geometry" />
+        </mxCell>
+        <mxCell id="rt-c5-box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#107C10;strokeWidth=1.5;" value="" vertex="1">
+          <mxGeometry height="16" width="16" x="448" y="338" as="geometry" />
+        </mxCell>
+        <mxCell id="rt-c5" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=12;fontColor=#242424;" value="Use security profiles (seccomp, AppArmor)" vertex="1">
+          <mxGeometry height="25" width="300" x="472" y="333" as="geometry" />
+        </mxCell>
+        <mxCell id="rt-c6-box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#107C10;strokeWidth=1.5;" value="" vertex="1">
+          <mxGeometry height="16" width="16" x="448" y="368" as="geometry" />
+        </mxCell>
+        <mxCell id="rt-c6" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=12;fontColor=#242424;" value="Prevent privilege escalation" vertex="1">
+          <mxGeometry height="25" width="210" x="472" y="363" as="geometry" />
+        </mxCell>
+        <mxCell id="rt-why-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F1FAF1;strokeColor=none;arcSize=10;" value="" vertex="1">
+          <mxGeometry height="58" width="311" x="445" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="rt-why-title" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=11;fontColor=#107C10;fontStyle=1;" value="Why it matters" vertex="1">
+          <mxGeometry height="20" width="110" x="458" y="403" as="geometry" />
+        </mxCell>
+        <mxCell id="rt-why" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=11;fontColor=#605E5C;fontStyle=2;" value="A container running as root with full capabilities&lt;br&gt;is one exploit away from owning the host" vertex="1">
+          <mxGeometry height="30" width="300" x="458" y="423" as="geometry" />
+        </mxCell>
+        <mxCell id="rt-local-label" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=10;fontColor=#8A8886;fontStyle=1;" value="Local runtime" vertex="1">
+          <mxGeometry height="18" width="100" x="445" y="460" as="geometry" />
+        </mxCell>
+        <mxCell id="rt-cmd-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#E1E1E1;arcSize=10;" value="" vertex="1">
+          <mxGeometry height="55" width="310" x="445" y="478" as="geometry" />
+        </mxCell>
+        <mxCell id="rt-cmd1" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Consolas;fontSize=11;fontColor=#242424;" value="podman run --user 1000:1000 \" vertex="1">
+          <mxGeometry height="22" width="250" x="458" y="483" as="geometry" />
+        </mxCell>
+        <mxCell id="rt-cmd2" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Consolas;fontSize=11;fontColor=#242424;" value="  --read-only --cap-drop ALL app" vertex="1">
+          <mxGeometry height="22" width="270" x="458" y="505" as="geometry" />
+        </mxCell>
+        <mxCell id="rt-k8s-label" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=10;fontColor=#8A8886;fontStyle=1;" value="Kubernetes" vertex="1">
+          <mxGeometry height="18" width="80" x="445" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="rt-k8s-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#E1E1E1;arcSize=10;" value="" vertex="1">
+          <mxGeometry height="50" width="310" x="445" y="558" as="geometry" />
+        </mxCell>
+        <mxCell id="rt-k8s1" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Consolas;fontSize=11;fontColor=#242424;" value="securityContext:" vertex="1">
+          <mxGeometry height="22" width="150" x="458" y="561" as="geometry" />
+        </mxCell>
+        <mxCell id="rt-k8s2" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Consolas;fontSize=11;fontColor=#242424;" value="  runAsNonRoot: true" vertex="1">
+          <mxGeometry height="22" width="180" x="458" y="581" as="geometry" />
+        </mxCell>
+        <mxCell id="net-card" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E1E1E1;shadow=1;arcSize=6;" value="" vertex="1">
+          <mxGeometry height="490" width="360" x="800" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="net-accent" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F7630C;strokeColor=none;" value="" vertex="1">
+          <mxGeometry height="490" width="5" x="800" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="net-header" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=18;fontColor=#242424;fontStyle=1;" value="Network Security" vertex="1">
+          <mxGeometry height="35" width="200" x="825" y="143" as="geometry" />
+        </mxCell>
+        <mxCell id="net-sub" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=11;fontColor=#8A8886;" value="Minimize attack surface exposure" vertex="1">
+          <mxGeometry height="20" width="220" x="825" y="175" as="geometry" />
+        </mxCell>
+        <mxCell id="net-sep" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E1E1E1;strokeColor=none;" value="" vertex="1">
+          <mxGeometry height="1" width="310" x="825" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="net-c1-box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#F7630C;strokeWidth=1.5;" value="" vertex="1">
+          <mxGeometry height="16" width="16" x="828" y="218" as="geometry" />
+        </mxCell>
+        <mxCell id="net-c1" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=12;fontColor=#242424;" value="Use custom/isolated networks" vertex="1">
+          <mxGeometry height="25" width="220" x="852" y="213" as="geometry" />
+        </mxCell>
+        <mxCell id="net-c2-box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#F7630C;strokeWidth=1.5;" value="" vertex="1">
+          <mxGeometry height="16" width="16" x="828" y="248" as="geometry" />
+        </mxCell>
+        <mxCell id="net-c2" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=12;fontColor=#242424;" value="Expose only necessary ports" vertex="1">
+          <mxGeometry height="25" width="200" x="852" y="243" as="geometry" />
+        </mxCell>
+        <mxCell id="net-c3-box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#F7630C;strokeWidth=1.5;" value="" vertex="1">
+          <mxGeometry height="16" width="16" x="828" y="278" as="geometry" />
+        </mxCell>
+        <mxCell id="net-c3" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=12;fontColor=#242424;" value="Restrict ingress and egress traffic" vertex="1">
+          <mxGeometry height="25" width="240" x="852" y="273" as="geometry" />
+        </mxCell>
+        <mxCell id="net-c4-box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#F7630C;strokeWidth=1.5;" value="" vertex="1">
+          <mxGeometry height="16" width="16" x="828" y="308" as="geometry" />
+        </mxCell>
+        <mxCell id="net-c4" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=12;fontColor=#242424;" value="Use TLS for inter-service communication" vertex="1">
+          <mxGeometry height="25" width="280" x="852" y="303" as="geometry" />
+        </mxCell>
+        <mxCell id="net-c5-box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#F7630C;strokeWidth=1.5;" value="" vertex="1">
+          <mxGeometry height="16" width="16" x="828" y="338" as="geometry" />
+        </mxCell>
+        <mxCell id="net-c5" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=12;fontColor=#242424;" value="Apply network policies (deny by default)" vertex="1">
+          <mxGeometry height="25" width="290" x="852" y="333" as="geometry" />
+        </mxCell>
+        <mxCell id="net-why-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF4EC;strokeColor=none;arcSize=10;" value="" vertex="1">
+          <mxGeometry height="60" width="311" x="825" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="net-why-title" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=11;fontColor=#F7630C;fontStyle=1;" value="Why it matters" vertex="1">
+          <mxGeometry height="20" width="110" x="838" y="383" as="geometry" />
+        </mxCell>
+        <mxCell id="net-why" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=11;fontColor=#605E5C;fontStyle=2;" value="Every open port is a door; unrestricted network&lt;br&gt;lets any compromised container move laterally" vertex="1">
+          <mxGeometry height="30" width="300" x="838" y="403" as="geometry" />
+        </mxCell>
+        <mxCell id="net-local-label" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=10;fontColor=#8A8886;fontStyle=1;" value="Local runtime" vertex="1">
+          <mxGeometry height="18" width="100" x="825" y="455" as="geometry" />
+        </mxCell>
+        <mxCell id="net-cmd-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#E1E1E1;arcSize=10;" value="" vertex="1">
+          <mxGeometry height="50" width="310" x="825" y="473" as="geometry" />
+        </mxCell>
+        <mxCell id="net-cmd1" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Consolas;fontSize=11;fontColor=#242424;" value="podman network create secure-net" vertex="1">
+          <mxGeometry height="22" width="290" x="838" y="476" as="geometry" />
+        </mxCell>
+        <mxCell id="net-cmd2" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Consolas;fontSize=11;fontColor=#242424;" value="-p 127.0.0.1:8080:8080" vertex="1">
+          <mxGeometry height="22" width="200" x="838" y="498" as="geometry" />
+        </mxCell>
+        <mxCell id="sec-card" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E1E1E1;shadow=1;arcSize=6;" value="" vertex="1">
+          <mxGeometry height="490" width="380" x="1180" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="sec-accent" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#D13438;strokeColor=none;" value="" vertex="1">
+          <mxGeometry height="490" width="5" x="1180" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="sec-header" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=18;fontColor=#242424;fontStyle=1;" value="Secrets Management" vertex="1">
+          <mxGeometry height="35" width="220" x="1205" y="143" as="geometry" />
+        </mxCell>
+        <mxCell id="sec-sub" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=11;fontColor=#8A8886;" value="Keep credentials out of images and repos" vertex="1">
+          <mxGeometry height="20" width="270" x="1205" y="175" as="geometry" />
+        </mxCell>
+        <mxCell id="sec-sep" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E1E1E1;strokeColor=none;" value="" vertex="1">
+          <mxGeometry height="1" width="330" x="1205" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="sec-c1-box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#D13438;strokeWidth=1.5;" value="" vertex="1">
+          <mxGeometry height="16" width="16" x="1208" y="218" as="geometry" />
+        </mxCell>
+        <mxCell id="sec-c1" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=12;fontColor=#242424;" value="Never bake secrets into images" vertex="1">
+          <mxGeometry height="25" width="230" x="1232" y="213" as="geometry" />
+        </mxCell>
+        <mxCell id="sec-c2-box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#D13438;strokeWidth=1.5;" value="" vertex="1">
+          <mxGeometry height="16" width="16" x="1208" y="248" as="geometry" />
+        </mxCell>
+        <mxCell id="sec-c2" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=12;fontColor=#242424;" value="Never commit secrets to version control" vertex="1">
+          <mxGeometry height="25" width="270" x="1232" y="243" as="geometry" />
+        </mxCell>
+        <mxCell id="sec-c3-box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#D13438;strokeWidth=1.5;" value="" vertex="1">
+          <mxGeometry height="16" width="16" x="1208" y="278" as="geometry" />
+        </mxCell>
+        <mxCell id="sec-c3" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=12;fontColor=#242424;" value="Inject secrets at runtime, not build time" vertex="1">
+          <mxGeometry height="25" width="280" x="1232" y="273" as="geometry" />
+        </mxCell>
+        <mxCell id="sec-c4-box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#D13438;strokeWidth=1.5;" value="" vertex="1">
+          <mxGeometry height="16" width="16" x="1208" y="308" as="geometry" />
+        </mxCell>
+        <mxCell id="sec-c4" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=12;fontColor=#242424;" value="Use external vaults or platform secrets" vertex="1">
+          <mxGeometry height="25" width="280" x="1232" y="303" as="geometry" />
+        </mxCell>
+        <mxCell id="sec-avoid-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FDF2F2;strokeColor=#D13438;arcSize=10;" value="" vertex="1">
+          <mxGeometry height="65" width="330" x="1205" y="345" as="geometry" />
+        </mxCell>
+        <mxCell id="sec-avoid-title" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=11;fontColor=#D13438;fontStyle=1;" value="Avoid" vertex="1">
+          <mxGeometry height="20" width="60" x="1218" y="348" as="geometry" />
+        </mxCell>
+        <mxCell id="sec-avoid1" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Consolas;fontSize=11;fontColor=#D13438;" value="ENV DB_PASSWORD=s3cret" vertex="1">
+          <mxGeometry height="22" width="200" x="1218" y="368" as="geometry" />
+        </mxCell>
+        <mxCell id="sec-avoid2" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Consolas;fontSize=11;fontColor=#D13438;" value="COPY credentials.json /app/" vertex="1">
+          <mxGeometry height="22" width="240" x="1218" y="388" as="geometry" />
+        </mxCell>
+        <mxCell id="sec-rec-local-label" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=10;fontColor=#8A8886;fontStyle=1;" value="Local runtime" vertex="1">
+          <mxGeometry height="18" width="100" x="1205" y="422" as="geometry" />
+        </mxCell>
+        <mxCell id="sec-rec-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F1FAF1;strokeColor=#107C10;arcSize=10;" value="" vertex="1">
+          <mxGeometry height="50" width="330" x="1205" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="sec-rec1" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Consolas;fontSize=11;fontColor=#107C10;" value="podman secret create db_pass file.txt" vertex="1">
+          <mxGeometry height="22" width="310" x="1218" y="443" as="geometry" />
+        </mxCell>
+        <mxCell id="sec-rec2" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Consolas;fontSize=11;fontColor=#107C10;" value="podman run --secret db_pass app" vertex="1">
+          <mxGeometry height="22" width="280" x="1218" y="465" as="geometry" />
+        </mxCell>
+        <mxCell id="sec-rec-k8s-label" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=10;fontColor=#8A8886;fontStyle=1;" value="Kubernetes" vertex="1">
+          <mxGeometry height="18" width="80" x="1205" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="sec-k8s-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F1FAF1;strokeColor=#107C10;arcSize=10;" value="" vertex="1">
+          <mxGeometry height="89" width="331" x="1205" y="518" as="geometry" />
+        </mxCell>
+        <mxCell id="sec-k8s1" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Consolas;fontSize=11;fontColor=#107C10;" value="kind: Secret" vertex="1">
+          <mxGeometry height="22" width="110" x="1218" y="521" as="geometry" />
+        </mxCell>
+        <mxCell id="sec-k8s2" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Consolas;fontSize=11;fontColor=#8A8886;" value="# or external: Azure Key Vault," vertex="1">
+          <mxGeometry height="22" width="280" x="1218" y="543" as="geometry" />
+        </mxCell>
+        <mxCell id="sec-k8s3" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Consolas;fontSize=11;fontColor=#8A8886;" value="# AWS Secrets Manager," vertex="1">
+          <mxGeometry height="22" width="200" x="1218" y="563" as="geometry" />
+        </mxCell>
+        <mxCell id="sec-k8s4" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Consolas;fontSize=11;fontColor=#8A8886;" value="# HashiCorp Vault" vertex="1">
+          <mxGeometry height="22" width="160" x="1218" y="583" as="geometry" />
+        </mxCell>
+        <mxCell id="guidance-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EFF6FC;strokeColor=#0078D4;arcSize=6;" value="" vertex="1">
+          <mxGeometry height="75" width="1520" x="40" y="650" as="geometry" />
+        </mxCell>
+        <mxCell id="guidance-title" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=13;fontColor=#0078D4;fontStyle=1;" value="Guidance" vertex="1">
+          <mxGeometry height="25" width="80" x="60" y="655" as="geometry" />
+        </mxCell>
+        <mxCell id="guidance-text" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=12;fontColor=#605E5C;whiteSpace=wrap;" value="These security principles apply regardless of whether you run containers locally with Podman or Docker, or at scale on Kubernetes, Nomad, or a managed platform. In orchestrated environments, enforcement shifts from CLI flags to declarative manifests: Pod Security Standards replace --cap-drop, NetworkPolicies replace custom bridge networks, and Kubernetes Secrets or external vaults replace runtime secret injection. The controls are the same — only the mechanism changes." vertex="1">
+          <mxGeometry height="35" width="1480" x="60" y="680" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

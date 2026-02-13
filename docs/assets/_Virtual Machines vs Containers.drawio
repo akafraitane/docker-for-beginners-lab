@@ -1,0 +1,130 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36 Edg/144.0.0.0" version="29.3.8">
+  <diagram name="VMs vs Containers" id="vmcont">
+    <mxGraphModel dx="1328" dy="735" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1300" pageHeight="680" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;fontSize=22;fontFamily=Segoe UI;fontColor=#242424;align=center;fontStyle=1;" value="Virtual Machines vs Containers" vertex="1">
+          <mxGeometry height="40" width="500" x="350" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="line" parent="1" style="line;strokeWidth=2;strokeColor=#0078D4;html=1;" value="" vertex="1">
+          <mxGeometry height="10" width="200" x="500" y="55" as="geometry" />
+        </mxCell>
+        <mxCell id="vm-box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#E0E0E0;arcSize=5;" value="" vertex="1">
+          <mxGeometry height="550" width="550" x="50" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="vm-hdr" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#8661C5;strokeColor=none;" value="" vertex="1">
+          <mxGeometry height="45" width="550" x="50" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="vm-t" parent="1" style="text;html=1;fontSize=16;fontFamily=Segoe UI;fontColor=#FFFFFF;align=center;fontStyle=1;" value="Virtual Machines" vertex="1">
+          <mxGeometry height="35" width="300" x="175" y="85" as="geometry" />
+        </mxCell>
+        <mxCell id="vm-a1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#8661C5;strokeColor=none;fontSize=12;fontFamily=Segoe UI;fontColor=#FFFFFF;fontStyle=1;" value="App 1" vertex="1">
+          <mxGeometry height="40" width="120" x="90" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="vm-a2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#8661C5;strokeColor=none;fontSize=12;fontFamily=Segoe UI;fontColor=#FFFFFF;fontStyle=1;" value="App 2" vertex="1">
+          <mxGeometry height="40" width="120" x="240" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="vm-a3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#8661C5;strokeColor=none;fontSize=12;fontFamily=Segoe UI;fontColor=#FFFFFF;fontStyle=1;" value="App 3" vertex="1">
+          <mxGeometry height="40" width="120" x="390" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="vm-b1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#B49FDB;strokeColor=none;fontSize=11;fontFamily=Segoe UI;fontColor=#FFFFFF;" value="Bins / Libs" vertex="1">
+          <mxGeometry height="35" width="120" x="90" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="vm-b2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#B49FDB;strokeColor=none;fontSize=11;fontFamily=Segoe UI;fontColor=#FFFFFF;" value="Bins / Libs" vertex="1">
+          <mxGeometry height="35" width="120" x="240" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="vm-b3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#B49FDB;strokeColor=none;fontSize=11;fontFamily=Segoe UI;fontColor=#FFFFFF;" value="Bins / Libs" vertex="1">
+          <mxGeometry height="35" width="120" x="390" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="vm-os1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D8CCE8;strokeColor=none;fontSize=11;fontFamily=Segoe UI;fontColor=#5B2C7A;" value="Guest OS" vertex="1">
+          <mxGeometry height="40" width="120" x="90" y="245" as="geometry" />
+        </mxCell>
+        <mxCell id="vm-os2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D8CCE8;strokeColor=none;fontSize=11;fontFamily=Segoe UI;fontColor=#5B2C7A;" value="Guest OS" vertex="1">
+          <mxGeometry height="40" width="120" x="240" y="245" as="geometry" />
+        </mxCell>
+        <mxCell id="vm-os3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D8CCE8;strokeColor=none;fontSize=11;fontFamily=Segoe UI;fontColor=#5B2C7A;" value="Guest OS" vertex="1">
+          <mxGeometry height="40" width="120" x="390" y="245" as="geometry" />
+        </mxCell>
+        <mxCell id="vm-hyp" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#5B2C7A;strokeColor=none;fontSize=13;fontFamily=Segoe UI;fontColor=#FFFFFF;fontStyle=1;" value="Hypervisor" vertex="1">
+          <mxGeometry height="40" width="420" x="90" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="vm-hos" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1D5E7;strokeColor=none;fontSize=13;fontFamily=Segoe UI;fontColor=#5B2C7A;" value="Host OS" vertex="1">
+          <mxGeometry height="40" width="420" x="90" y="365" as="geometry" />
+        </mxCell>
+        <mxCell id="vm-hw" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#424242;strokeColor=none;fontSize=13;fontFamily=Segoe UI;fontColor=#FFFFFF;" value="Hardware" vertex="1">
+          <mxGeometry height="40" width="420" x="90" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="vm-c1" parent="1" style="text;html=1;fontSize=11;fontFamily=Segoe UI;fontColor=#616161;align=left;" value="▪ Full guest OS per workload" vertex="1">
+          <mxGeometry height="22" width="230" x="100" y="480" as="geometry" />
+        </mxCell>
+        <mxCell id="vm-c2" parent="1" style="text;html=1;fontSize=11;fontFamily=Segoe UI;fontColor=#616161;align=left;" value="▪ Minutes to boot" vertex="1">
+          <mxGeometry height="22" width="230" x="100" y="502" as="geometry" />
+        </mxCell>
+        <mxCell id="vm-c3" parent="1" style="text;html=1;fontSize=11;fontFamily=Segoe UI;fontColor=#616161;align=left;" value="▪ GBs of RAM overhead" vertex="1">
+          <mxGeometry height="22" width="230" x="100" y="524" as="geometry" />
+        </mxCell>
+        <mxCell id="vm-c4" parent="1" style="text;html=1;fontSize=11;fontFamily=Segoe UI;fontColor=#616161;align=left;" value="▪ Strong isolation boundary" vertex="1">
+          <mxGeometry height="22" width="230" x="100" y="546" as="geometry" />
+        </mxCell>
+        <mxCell id="vm-badge" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FDE7E9;strokeColor=#D13438;fontSize=12;fontFamily=Segoe UI;fontColor=#D13438;fontStyle=1;" value="Heavy" vertex="1">
+          <mxGeometry height="30" width="100" x="400" y="505" as="geometry" />
+        </mxCell>
+        <mxCell id="ct-box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#E0E0E0;arcSize=5;" value="" vertex="1">
+          <mxGeometry height="550" width="550" x="660" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ct-hdr" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#0078D4;strokeColor=none;" value="" vertex="1">
+          <mxGeometry height="45" width="550" x="660" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ct-t" parent="1" style="text;html=1;fontSize=16;fontFamily=Segoe UI;fontColor=#FFFFFF;align=center;fontStyle=1;" value="Containers" vertex="1">
+          <mxGeometry height="35" width="300" x="785" y="85" as="geometry" />
+        </mxCell>
+        <mxCell id="ct-a1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0078D4;strokeColor=none;fontSize=12;fontFamily=Segoe UI;fontColor=#FFFFFF;fontStyle=1;" value="App 1" vertex="1">
+          <mxGeometry height="40" width="120" x="700" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="ct-a2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0078D4;strokeColor=none;fontSize=12;fontFamily=Segoe UI;fontColor=#FFFFFF;fontStyle=1;" value="App 2" vertex="1">
+          <mxGeometry height="40" width="120" x="850" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="ct-a3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0078D4;strokeColor=none;fontSize=12;fontFamily=Segoe UI;fontColor=#FFFFFF;fontStyle=1;" value="App 3" vertex="1">
+          <mxGeometry height="40" width="120" x="1000" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="ct-b1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2B88D8;strokeColor=none;fontSize=11;fontFamily=Segoe UI;fontColor=#FFFFFF;" value="Bins / Libs" vertex="1">
+          <mxGeometry height="35" width="120" x="700" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="ct-b2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2B88D8;strokeColor=none;fontSize=11;fontFamily=Segoe UI;fontColor=#FFFFFF;" value="Bins / Libs" vertex="1">
+          <mxGeometry height="35" width="120" x="850" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="ct-b3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2B88D8;strokeColor=none;fontSize=11;fontFamily=Segoe UI;fontColor=#FFFFFF;" value="Bins / Libs" vertex="1">
+          <mxGeometry height="35" width="120" x="1000" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="ct-rt" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#106EBE;strokeColor=none;fontSize=13;fontFamily=Segoe UI;fontColor=#FFFFFF;fontStyle=1;" value="Container Engine" vertex="1">
+          <mxGeometry height="40" width="420" x="700" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="ct-hos" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C7E0F4;strokeColor=none;fontSize=13;fontFamily=Segoe UI;fontColor=#0078D4;" value="Host OS" vertex="1">
+          <mxGeometry height="40" width="420" x="700" y="315" as="geometry" />
+        </mxCell>
+        <mxCell id="ct-hw" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#424242;strokeColor=none;fontSize=13;fontFamily=Segoe UI;fontColor=#FFFFFF;" value="Hardware" vertex="1">
+          <mxGeometry height="40" width="420" x="700" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="ct-c1" parent="1" style="text;html=1;fontSize=11;fontFamily=Segoe UI;fontColor=#616161;align=left;" value="▪ Shared kernel, isolated processes" vertex="1">
+          <mxGeometry height="22" width="260" x="710" y="476" as="geometry" />
+        </mxCell>
+        <mxCell id="ct-c2" parent="1" style="text;html=1;fontSize=11;fontFamily=Segoe UI;fontColor=#616161;align=left;" value="▪ Starts in milliseconds" vertex="1">
+          <mxGeometry height="22" width="260" x="710" y="498" as="geometry" />
+        </mxCell>
+        <mxCell id="ct-c3" parent="1" style="text;html=1;fontSize=11;fontFamily=Segoe UI;fontColor=#616161;align=left;" value="▪ MBs of overhead" vertex="1">
+          <mxGeometry height="22" width="260" x="710" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="ct-c4" parent="1" style="text;html=1;fontSize=11;fontFamily=Segoe UI;fontColor=#616161;align=left;" value="▪ No guest OS required" vertex="1">
+          <mxGeometry height="22" width="260" x="710" y="542" as="geometry" />
+        </mxCell>
+        <mxCell id="ct-badge" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DFF6DD;strokeColor=#107C10;fontSize=12;fontFamily=Segoe UI;fontColor=#107C10;fontStyle=1;" value="Lightweight" vertex="1">
+          <mxGeometry height="30" width="110" x="1010" y="501" as="geometry" />
+        </mxCell>
+        <mxCell id="vs" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#242424;strokeColor=none;fontSize=16;fontFamily=Segoe UI;fontColor=#FFFFFF;fontStyle=1;" value="vs" vertex="1">
+          <mxGeometry height="50" width="50" x="605" y="240" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

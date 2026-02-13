@@ -1,0 +1,277 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0" version="29.4.0">
+  <diagram name="Dockerfile Optimization Rules" id="dockerfile-opt">
+    <mxGraphModel dx="1156" dy="807" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1600" pageHeight="950" background="#FAFAFA" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title-bar" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0078D4;strokeColor=none;arcSize=4;" value="" vertex="1">
+          <mxGeometry height="60" width="1520" x="40" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="title-text" parent="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=22;fontColor=#FFFFFF;fontStyle=1;" value="Dockerfile Optimization Rules" vertex="1">
+          <mxGeometry height="40" width="400" x="560" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="c1-card" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E1E1E1;shadow=1;arcSize=6;" value="" vertex="1">
+          <mxGeometry height="530" width="360" x="40" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="c1-accent" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#0078D4;strokeColor=none;" value="" vertex="1">
+          <mxGeometry height="530" width="5" x="40" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="c1-header" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=16;fontColor=#242424;fontStyle=1;" value="Order Matters for Caching" vertex="1">
+          <mxGeometry height="30" width="280" x="65" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="c1-sub" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=11;fontColor=#8A8886;" value="Put least-changing layers first" vertex="1">
+          <mxGeometry height="20" width="210" x="65" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="c1-sep" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E1E1E1;strokeColor=none;" value="" vertex="1">
+          <mxGeometry height="1" width="310" x="65" y="175" as="geometry" />
+        </mxCell>
+        <mxCell id="c1-desc" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=12;fontColor=#605E5C;" value="When a layer changes, every layer after it is&lt;br&gt;rebuilt from scratch. Copy code last so that&lt;br&gt;dependency installs stay cached." vertex="1">
+          <mxGeometry height="52" width="310" x="65" y="185" as="geometry" />
+        </mxCell>
+        <mxCell id="c1-avoid-label" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=11;fontColor=#D13438;fontStyle=1;" value="Avoid" vertex="1">
+          <mxGeometry height="20" width="60" x="65" y="248" as="geometry" />
+        </mxCell>
+        <mxCell id="c1-avoid-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FDF2F2;strokeColor=#D13438;arcSize=10;" value="" vertex="1">
+          <mxGeometry height="95" width="310" x="65" y="268" as="geometry" />
+        </mxCell>
+        <mxCell id="c1-a1" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Consolas;fontSize=11;fontColor=#D13438;" value="COPY . ." vertex="1">
+          <mxGeometry height="22" width="80" x="78" y="275" as="geometry" />
+        </mxCell>
+        <mxCell id="c1-a2" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Consolas;fontSize=11;fontColor=#D13438;" value="RUN pip install -r requirements.txt" vertex="1">
+          <mxGeometry height="22" width="300" x="78" y="297" as="geometry" />
+        </mxCell>
+        <mxCell id="c1-a-note" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Consolas;fontSize=11;fontColor=#8A8886;" value="# any code edit invalidates" vertex="1">
+          <mxGeometry height="22" width="240" x="78" y="319" as="geometry" />
+        </mxCell>
+        <mxCell id="c1-a-note2" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Consolas;fontSize=11;fontColor=#8A8886;" value="# the pip install cache" vertex="1">
+          <mxGeometry height="22" width="200" x="78" y="339" as="geometry" />
+        </mxCell>
+        <mxCell id="c1-rec-label" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=11;fontColor=#107C10;fontStyle=1;" value="Recommended" vertex="1">
+          <mxGeometry height="20" width="110" x="65" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="c1-rec-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F1FAF1;strokeColor=#107C10;arcSize=10;" value="" vertex="1">
+          <mxGeometry height="95" width="310" x="65" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="c1-r1" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Consolas;fontSize=11;fontColor=#107C10;" value="COPY requirements.txt ." vertex="1">
+          <mxGeometry height="22" width="200" x="78" y="407" as="geometry" />
+        </mxCell>
+        <mxCell id="c1-r2" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Consolas;fontSize=11;fontColor=#107C10;" value="RUN pip install -r requirements.txt" vertex="1">
+          <mxGeometry height="22" width="300" x="78" y="429" as="geometry" />
+        </mxCell>
+        <mxCell id="c1-r3" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Consolas;fontSize=11;fontColor=#107C10;" value="COPY . ." vertex="1">
+          <mxGeometry height="22" width="80" x="78" y="451" as="geometry" />
+        </mxCell>
+        <mxCell id="c1-r-note" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Consolas;fontSize=11;fontColor=#8A8886;" value="# deps cached, code changes" vertex="1">
+          <mxGeometry height="22" width="250" x="78" y="473" as="geometry" />
+        </mxCell>
+        <mxCell id="c1-why-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EFF6FC;strokeColor=none;arcSize=10;" value="" vertex="1">
+          <mxGeometry height="50" width="310" x="65" y="510" as="geometry" />
+        </mxCell>
+        <mxCell id="c1-why-title" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=11;fontColor=#0078D4;fontStyle=1;" value="Why it matters" vertex="1">
+          <mxGeometry height="20" width="110" x="78" y="513" as="geometry" />
+        </mxCell>
+        <mxCell id="c1-why" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=11;fontColor=#605E5C;fontStyle=2;" value="Proper ordering turns multi-minute rebuilds&lt;br&gt;into seconds on every code-only change" vertex="1">
+          <mxGeometry height="30" width="290" x="78" y="533" as="geometry" />
+        </mxCell>
+        <mxCell id="c2-card" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E1E1E1;shadow=1;arcSize=6;" value="" vertex="1">
+          <mxGeometry height="530" width="360" x="420" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="c2-accent" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#107C10;strokeColor=none;" value="" vertex="1">
+          <mxGeometry height="530" width="5" x="420" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="c2-header" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=16;fontColor=#242424;fontStyle=1;" value="Minimize Layers" vertex="1">
+          <mxGeometry height="30" width="170" x="445" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="c2-sub" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=11;fontColor=#8A8886;" value="Chain commands, clean up in the same layer" vertex="1">
+          <mxGeometry height="20" width="280" x="445" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="c2-sep" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E1E1E1;strokeColor=none;" value="" vertex="1">
+          <mxGeometry height="1" width="310" x="445" y="175" as="geometry" />
+        </mxCell>
+        <mxCell id="c2-desc" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=12;fontColor=#605E5C;" value="Each RUN creates a new layer. Files deleted&lt;br&gt;in a later layer still occupy space in the&lt;br&gt;previous one. Combine install and cleanup." vertex="1">
+          <mxGeometry height="52" width="310" x="445" y="185" as="geometry" />
+        </mxCell>
+        <mxCell id="c2-avoid-label" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=11;fontColor=#D13438;fontStyle=1;" value="Avoid" vertex="1">
+          <mxGeometry height="20" width="60" x="445" y="248" as="geometry" />
+        </mxCell>
+        <mxCell id="c2-avoid-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FDF2F2;strokeColor=#D13438;arcSize=10;" value="" vertex="1">
+          <mxGeometry height="95" width="310" x="445" y="268" as="geometry" />
+        </mxCell>
+        <mxCell id="c2-a1" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Consolas;fontSize=11;fontColor=#D13438;" value="RUN apt-get update" vertex="1">
+          <mxGeometry height="22" width="170" x="458" y="275" as="geometry" />
+        </mxCell>
+        <mxCell id="c2-a2" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Consolas;fontSize=11;fontColor=#D13438;" value="RUN apt-get install -y curl" vertex="1">
+          <mxGeometry height="22" width="240" x="458" y="297" as="geometry" />
+        </mxCell>
+        <mxCell id="c2-a3" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Consolas;fontSize=11;fontColor=#D13438;" value="RUN rm -rf /var/lib/apt/lists/*" vertex="1">
+          <mxGeometry height="22" width="260" x="458" y="319" as="geometry" />
+        </mxCell>
+        <mxCell id="c2-a-note" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Consolas;fontSize=11;fontColor=#8A8886;" value="# 3 layers, cache never removed" vertex="1">
+          <mxGeometry height="22" width="280" x="458" y="339" as="geometry" />
+        </mxCell>
+        <mxCell id="c2-rec-label" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=11;fontColor=#107C10;fontStyle=1;" value="Recommended" vertex="1">
+          <mxGeometry height="20" width="110" x="445" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="c2-rec-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F1FAF1;strokeColor=#107C10;arcSize=10;" value="" vertex="1">
+          <mxGeometry height="95" width="310" x="445" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="c2-r1" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Consolas;fontSize=11;fontColor=#107C10;" value="RUN apt-get update &amp;&amp; \" vertex="1">
+          <mxGeometry height="22" width="200" x="458" y="407" as="geometry" />
+        </mxCell>
+        <mxCell id="c2-r2" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Consolas;fontSize=11;fontColor=#107C10;" value="    apt-get install -y curl &amp;&amp; \" vertex="1">
+          <mxGeometry height="22" width="280" x="458" y="429" as="geometry" />
+        </mxCell>
+        <mxCell id="c2-r3" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Consolas;fontSize=11;fontColor=#107C10;" value="    rm -rf /var/lib/apt/lists/*" vertex="1">
+          <mxGeometry height="22" width="270" x="458" y="451" as="geometry" />
+        </mxCell>
+        <mxCell id="c2-r-note" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Consolas;fontSize=11;fontColor=#8A8886;" value="# 1 layer, cache truly gone" vertex="1">
+          <mxGeometry height="22" width="240" x="458" y="473" as="geometry" />
+        </mxCell>
+        <mxCell id="c2-why-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F1FAF1;strokeColor=none;arcSize=10;" value="" vertex="1">
+          <mxGeometry height="50" width="310" x="445" y="510" as="geometry" />
+        </mxCell>
+        <mxCell id="c2-why-title" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=11;fontColor=#107C10;fontStyle=1;" value="Why it matters" vertex="1">
+          <mxGeometry height="20" width="110" x="458" y="513" as="geometry" />
+        </mxCell>
+        <mxCell id="c2-why" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=11;fontColor=#605E5C;fontStyle=2;" value="Separate RUN steps leave dead weight; a&lt;br&gt;single layer keeps images lean and pulls fast" vertex="1">
+          <mxGeometry height="30" width="300" x="458" y="533" as="geometry" />
+        </mxCell>
+        <mxCell id="c3-card" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E1E1E1;shadow=1;arcSize=6;" value="" vertex="1">
+          <mxGeometry height="530" width="360" x="800" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="c3-accent" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F7630C;strokeColor=none;" value="" vertex="1">
+          <mxGeometry height="530" width="5" x="800" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="c3-header" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=16;fontColor=#242424;fontStyle=1;" value="Use Specific Tags" vertex="1">
+          <mxGeometry height="30" width="190" x="825" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="c3-sub" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=11;fontColor=#8A8886;" value="Pin versions for reproducible builds" vertex="1">
+          <mxGeometry height="20" width="240" x="825" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="c3-sep" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E1E1E1;strokeColor=none;" value="" vertex="1">
+          <mxGeometry height="1" width="310" x="825" y="175" as="geometry" />
+        </mxCell>
+        <mxCell id="c3-desc" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=12;fontColor=#605E5C;" value=":latest is a moving target. It points to a&lt;br&gt;different image every upstream publish.&lt;br&gt;Builds stop being reproducible." vertex="1">
+          <mxGeometry height="52" width="310" x="825" y="185" as="geometry" />
+        </mxCell>
+        <mxCell id="c3-avoid-label" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=11;fontColor=#D13438;fontStyle=1;" value="Avoid" vertex="1">
+          <mxGeometry height="20" width="60" x="825" y="248" as="geometry" />
+        </mxCell>
+        <mxCell id="c3-avoid-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FDF2F2;strokeColor=#D13438;arcSize=10;" value="" vertex="1">
+          <mxGeometry height="95" width="310" x="825" y="268" as="geometry" />
+        </mxCell>
+        <mxCell id="c3-a1" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Consolas;fontSize=11;fontColor=#D13438;" value="FROM python:latest" vertex="1">
+          <mxGeometry height="22" width="170" x="838" y="275" as="geometry" />
+        </mxCell>
+        <mxCell id="c3-a2" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Consolas;fontSize=11;fontColor=#D13438;" value="FROM python" vertex="1">
+          <mxGeometry height="22" width="110" x="838" y="297" as="geometry" />
+        </mxCell>
+        <mxCell id="c3-a-note" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Consolas;fontSize=11;fontColor=#8A8886;" value="# different image tomorrow," vertex="1">
+          <mxGeometry height="22" width="240" x="838" y="319" as="geometry" />
+        </mxCell>
+        <mxCell id="c3-a-note2" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Consolas;fontSize=11;fontColor=#8A8886;" value="# impossible to reproduce" vertex="1">
+          <mxGeometry height="22" width="220" x="838" y="339" as="geometry" />
+        </mxCell>
+        <mxCell id="c3-rec-label" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=11;fontColor=#107C10;fontStyle=1;" value="Recommended" vertex="1">
+          <mxGeometry height="20" width="110" x="825" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="c3-rec-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F1FAF1;strokeColor=#107C10;arcSize=10;" value="" vertex="1">
+          <mxGeometry height="95" width="310" x="825" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="c3-r1" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Consolas;fontSize=11;fontColor=#107C10;" value="FROM python:3.11-slim-bookworm" vertex="1">
+          <mxGeometry height="22" width="280" x="838" y="407" as="geometry" />
+        </mxCell>
+        <mxCell id="c3-r-note" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Consolas;fontSize=11;fontColor=#8A8886;" value="# same Python, same OS, same" vertex="1">
+          <mxGeometry height="22" width="270" x="838" y="429" as="geometry" />
+        </mxCell>
+        <mxCell id="c3-r-note2" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Consolas;fontSize=11;fontColor=#8A8886;" value="# system libs everywhere" vertex="1">
+          <mxGeometry height="22" width="220" x="838" y="451" as="geometry" />
+        </mxCell>
+        <mxCell id="c3-why-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF4EC;strokeColor=none;arcSize=10;" value="" vertex="1">
+          <mxGeometry height="50" width="310" x="825" y="510" as="geometry" />
+        </mxCell>
+        <mxCell id="c3-why-title" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=11;fontColor=#F7630C;fontStyle=1;" value="Why it matters" vertex="1">
+          <mxGeometry height="20" width="110" x="838" y="513" as="geometry" />
+        </mxCell>
+        <mxCell id="c3-why" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=11;fontColor=#605E5C;fontStyle=2;" value="Pinned tags guarantee the same base on every&lt;br&gt;machine, in every pipeline, on every build" vertex="1">
+          <mxGeometry height="30" width="300" x="838" y="533" as="geometry" />
+        </mxCell>
+        <mxCell id="c4-card" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E1E1E1;shadow=1;arcSize=6;" value="" vertex="1">
+          <mxGeometry height="530" width="380" x="1180" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="c4-accent" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#8661C5;strokeColor=none;" value="" vertex="1">
+          <mxGeometry height="530" width="5" x="1180" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="c4-header" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=16;fontColor=#242424;fontStyle=1;" value="Use .dockerignore" vertex="1">
+          <mxGeometry height="30" width="190" x="1205" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="c4-sub" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=11;fontColor=#8A8886;" value="Keep build context small and secret-free" vertex="1">
+          <mxGeometry height="20" width="260" x="1205" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="c4-sep" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E1E1E1;strokeColor=none;" value="" vertex="1">
+          <mxGeometry height="1" width="330" x="1205" y="175" as="geometry" />
+        </mxCell>
+        <mxCell id="c4-desc" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=12;fontColor=#605E5C;" value="Without .dockerignore, the entire directory&lt;br&gt;is sent as build context, including .git/,&lt;br&gt;node_modules/, .env files with secrets." vertex="1">
+          <mxGeometry height="52" width="310" x="1205" y="185" as="geometry" />
+        </mxCell>
+        <mxCell id="c4-avoid-label" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=11;fontColor=#D13438;fontStyle=1;" value="Avoid" vertex="1">
+          <mxGeometry height="20" width="60" x="1205" y="248" as="geometry" />
+        </mxCell>
+        <mxCell id="c4-avoid-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FDF2F2;strokeColor=#D13438;arcSize=10;" value="" vertex="1">
+          <mxGeometry height="95" width="330" x="1205" y="268" as="geometry" />
+        </mxCell>
+        <mxCell id="c4-a1" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Consolas;fontSize=11;fontColor=#D13438;" value="# no .dockerignore file" vertex="1">
+          <mxGeometry height="22" width="200" x="1218" y="275" as="geometry" />
+        </mxCell>
+        <mxCell id="c4-a2" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Consolas;fontSize=11;fontColor=#D13438;" value="Sending context: .git/ (100+ MB)" vertex="1">
+          <mxGeometry height="22" width="280" x="1218" y="297" as="geometry" />
+        </mxCell>
+        <mxCell id="c4-a3" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Consolas;fontSize=11;fontColor=#D13438;" value="Sending context: node_modules/" vertex="1">
+          <mxGeometry height="22" width="270" x="1218" y="319" as="geometry" />
+        </mxCell>
+        <mxCell id="c4-a4" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Consolas;fontSize=11;fontColor=#D13438;" value="Sending context: .env (secrets!)" vertex="1">
+          <mxGeometry height="22" width="280" x="1218" y="339" as="geometry" />
+        </mxCell>
+        <mxCell id="c4-rec-label" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=11;fontColor=#107C10;fontStyle=1;" value="Recommended" vertex="1">
+          <mxGeometry height="20" width="110" x="1205" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="c4-rec-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F1FAF1;strokeColor=#107C10;arcSize=10;" value="" vertex="1">
+          <mxGeometry height="118" width="330" x="1205" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="c4-r-title" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Consolas;fontSize=11;fontColor=#8A8886;" value="# .dockerignore" vertex="1">
+          <mxGeometry height="22" width="150" x="1218" y="407" as="geometry" />
+        </mxCell>
+        <mxCell id="c4-r1" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Consolas;fontSize=11;fontColor=#107C10;" value=".git" vertex="1">
+          <mxGeometry height="22" width="40" x="1218" y="429" as="geometry" />
+        </mxCell>
+        <mxCell id="c4-r2" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Consolas;fontSize=11;fontColor=#107C10;" value="node_modules" vertex="1">
+          <mxGeometry height="22" width="120" x="1218" y="451" as="geometry" />
+        </mxCell>
+        <mxCell id="c4-r3" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Consolas;fontSize=11;fontColor=#107C10;" value=".env" vertex="1">
+          <mxGeometry height="22" width="50" x="1218" y="473" as="geometry" />
+        </mxCell>
+        <mxCell id="c4-r4" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Consolas;fontSize=11;fontColor=#107C10;" value="__pycache__" vertex="1">
+          <mxGeometry height="22" width="110" x="1218" y="495" as="geometry" />
+        </mxCell>
+        <mxCell id="c4-why-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3F0FA;strokeColor=none;arcSize=10;" value="" vertex="1">
+          <mxGeometry height="50" width="330" x="1205" y="530" as="geometry" />
+        </mxCell>
+        <mxCell id="c4-why-title" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=11;fontColor=#8661C5;fontStyle=1;" value="Why it matters" vertex="1">
+          <mxGeometry height="20" width="110" x="1218" y="533" as="geometry" />
+        </mxCell>
+        <mxCell id="c4-why" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=11;fontColor=#605E5C;fontStyle=2;" value="A clean .dockerignore gives faster builds and&lt;br&gt;prevents secrets from leaking into images" vertex="1">
+          <mxGeometry height="30" width="300" x="1218" y="553" as="geometry" />
+        </mxCell>
+        <mxCell id="guidance-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EFF6FC;strokeColor=#0078D4;arcSize=6;" value="" vertex="1">
+          <mxGeometry height="65" width="1520" x="40" y="660" as="geometry" />
+        </mxCell>
+        <mxCell id="guidance-title" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=13;fontColor=#0078D4;fontStyle=1;" value="Guidance" vertex="1">
+          <mxGeometry height="25" width="80" x="60" y="665" as="geometry" />
+        </mxCell>
+        <mxCell id="guidance-text" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=12;fontColor=#605E5C;whiteSpace=wrap;" value="If your image exceeds a few hundred MB or your builds take more than a minute, at least one of these rules is being violated. Revisit layer order, chain your RUN commands, pin your tags, and audit your .dockerignore." vertex="1">
+          <mxGeometry height="25" width="1480" x="60" y="690" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

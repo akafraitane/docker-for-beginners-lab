@@ -1,0 +1,108 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36 Edg/144.0.0.0" version="29.3.8">
+  <diagram name="Works On My Machine" id="ms-gap">
+    <mxGraphModel dx="1646" dy="912" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="dev-box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#E0E0E0;arcSize=6;shadow=0;" value="" vertex="1">
+          <mxGeometry height="400" width="340" x="60" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="dev-header" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#0078D4;strokeColor=none;arcSize=0;" value="" vertex="1">
+          <mxGeometry height="50" width="340" x="60" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="dev-title" parent="1" style="text;html=1;fontSize=16;fontFamily=Segoe UI;fontColor=#FFFFFF;align=center;verticalAlign=middle;fontStyle=1;" value="Development" vertex="1">
+          <mxGeometry height="40" width="220" x="120" y="125" as="geometry" />
+        </mxCell>
+        <mxCell id="dev-os" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E0E0E0;fontSize=12;fontFamily=Segoe UI;fontColor=#242424;align=left;spacingLeft=12;" value="OS: Windows 11" vertex="1">
+          <mxGeometry height="36" width="290" x="85" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="dev-runtime" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E0E0E0;fontSize=12;fontFamily=Segoe UI;fontColor=#242424;align=left;spacingLeft=12;" value="Runtime: Node.js 20.11" vertex="1">
+          <mxGeometry height="36" width="290" x="85" y="236" as="geometry" />
+        </mxCell>
+        <mxCell id="dev-deps" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E0E0E0;fontSize=12;fontFamily=Segoe UI;fontColor=#242424;align=left;spacingLeft=12;" value="Dependencies: All installed locally" vertex="1">
+          <mxGeometry height="36" width="290" x="85" y="282" as="geometry" />
+        </mxCell>
+        <mxCell id="dev-env" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E0E0E0;fontSize=12;fontFamily=Segoe UI;fontColor=#242424;align=left;spacingLeft=12;" value="Environment: .env configured" vertex="1">
+          <mxGeometry height="36" width="290" x="85" y="328" as="geometry" />
+        </mxCell>
+        <mxCell id="dev-paths" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E0E0E0;fontSize=12;fontFamily=Segoe UI;fontColor=#242424;align=left;spacingLeft=12;" value="Paths: C:\Users\dev\project" vertex="1">
+          <mxGeometry height="36" width="290" x="85" y="374" as="geometry" />
+        </mxCell>
+        <mxCell id="dev-libs" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E0E0E0;fontSize=12;fontFamily=Segoe UI;fontColor=#242424;align=left;spacingLeft=12;" value="Libraries: Specific versions" vertex="1">
+          <mxGeometry height="36" width="290" x="85" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="dev-result" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DFF6DD;strokeColor=#107C10;fontSize=13;fontFamily=Segoe UI;fontColor=#107C10;fontStyle=1;" value="Application runs successfully" vertex="1">
+          <mxGeometry height="36" width="260" x="100" y="476" as="geometry" />
+        </mxCell>
+        <mxCell id="prod-box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#E0E0E0;arcSize=6;shadow=0;" value="" vertex="1">
+          <mxGeometry height="400" width="340" x="800" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="prod-header" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#8661C5;strokeColor=none;arcSize=0;" value="" vertex="1">
+          <mxGeometry height="50" width="340" x="800" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="prod-title" parent="1" style="text;html=1;fontSize=16;fontFamily=Segoe UI;fontColor=#FFFFFF;align=center;verticalAlign=middle;fontStyle=1;" value="Production" vertex="1">
+          <mxGeometry height="40" width="220" x="860" y="125" as="geometry" />
+        </mxCell>
+        <mxCell id="prod-os" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E0E0E0;fontSize=12;fontFamily=Segoe UI;fontColor=#242424;align=left;spacingLeft=12;" value="OS: Ubuntu 22.04" vertex="1">
+          <mxGeometry height="36" width="290" x="825" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="prod-runtime" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E0E0E0;fontSize=12;fontFamily=Segoe UI;fontColor=#242424;align=left;spacingLeft=12;" value="Runtime: Node.js 18.17" vertex="1">
+          <mxGeometry height="36" width="290" x="825" y="236" as="geometry" />
+        </mxCell>
+        <mxCell id="prod-deps" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E0E0E0;fontSize=12;fontFamily=Segoe UI;fontColor=#242424;align=left;spacingLeft=12;" value="Dependencies: Partially installed" vertex="1">
+          <mxGeometry height="36" width="290" x="825" y="282" as="geometry" />
+        </mxCell>
+        <mxCell id="prod-env" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E0E0E0;fontSize=12;fontFamily=Segoe UI;fontColor=#242424;align=left;spacingLeft=12;" value="Environment: Variables not set" vertex="1">
+          <mxGeometry height="36" width="290" x="825" y="328" as="geometry" />
+        </mxCell>
+        <mxCell id="prod-paths" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E0E0E0;fontSize=12;fontFamily=Segoe UI;fontColor=#242424;align=left;spacingLeft=12;" value="Paths: /home/app/project" vertex="1">
+          <mxGeometry height="36" width="290" x="825" y="374" as="geometry" />
+        </mxCell>
+        <mxCell id="prod-libs" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E0E0E0;fontSize=12;fontFamily=Segoe UI;fontColor=#242424;align=left;spacingLeft=12;" value="Libraries: Different versions" vertex="1">
+          <mxGeometry height="36" width="290" x="825" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="prod-result" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FDE7E9;strokeColor=#D13438;fontSize=13;fontFamily=Segoe UI;fontColor=#D13438;fontStyle=1;" value="Application fails to start" vertex="1">
+          <mxGeometry height="36" width="260" x="840" y="476" as="geometry" />
+        </mxCell>
+        <mxCell id="gap-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF4CE;strokeColor=#F7D94E;arcSize=8;shadow=0;" value="" vertex="1">
+          <mxGeometry height="340" width="300" x="450" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="gap-title" parent="1" style="text;html=1;fontSize=15;fontFamily=Segoe UI;fontColor=#835C00;align=center;verticalAlign=middle;fontStyle=1;" value="Environment Mismatch" vertex="1">
+          <mxGeometry height="30" width="240" x="480" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="gap-icon" parent="1" style="text;html=1;fontSize=36;align=center;verticalAlign=middle;fontColor=#835C00;" value="⚠" vertex="1">
+          <mxGeometry height="50" width="70" x="565" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="g1" parent="1" style="text;html=1;fontSize=12;fontFamily=Segoe UI;fontColor=#835C00;align=left;" value="✕  Different operating systems" vertex="1">
+          <mxGeometry height="24" width="250" x="480" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="g2" parent="1" style="text;html=1;fontSize=12;fontFamily=Segoe UI;fontColor=#835C00;align=left;" value="✕  Mismatched runtime versions" vertex="1">
+          <mxGeometry height="24" width="250" x="480" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="g3" parent="1" style="text;html=1;fontSize=12;fontFamily=Segoe UI;fontColor=#835C00;align=left;" value="✕  Missing dependencies" vertex="1">
+          <mxGeometry height="24" width="250" x="480" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="g4" parent="1" style="text;html=1;fontSize=12;fontFamily=Segoe UI;fontColor=#835C00;align=left;" value="✕  Inconsistent configuration" vertex="1">
+          <mxGeometry height="24" width="250" x="480" y="330" as="geometry" />
+        </mxCell>
+        <mxCell id="g5" parent="1" style="text;html=1;fontSize=12;fontFamily=Segoe UI;fontColor=#835C00;align=left;" value="✕  Incompatible file paths" vertex="1">
+          <mxGeometry height="24" width="250" x="480" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="g6" parent="1" style="text;html=1;fontSize=12;fontFamily=Segoe UI;fontColor=#835C00;align=left;" value="✕  Library version conflicts" vertex="1">
+          <mxGeometry height="24" width="250" x="480" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="arr-dev" edge="1" parent="1" source="dev-box" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#0078D4;strokeWidth=2;dashed=1;dashPattern=8 4;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.3;entryDx=0;entryDy=0;" target="gap-bg">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arr-prod" edge="1" parent="1" source="gap-bg" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#8661C5;strokeWidth=2;dashed=1;dashPattern=8 4;exitX=1;exitY=0.3;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="prod-box">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arr-sol" edge="1" parent="1" source="gap-bg" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#FFFFFF;strokeWidth=3;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="600" y="570" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
