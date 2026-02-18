@@ -12,6 +12,7 @@ tags: docker, podman, containers, devops, microservices
 navigation_levels: 2
 navigation_numbering: true
 sections_title:
+  - "Welcome"
   - "Kickoff: Why Containers"
   - "Setup: Podman Environment"
   - "Launch Your First Container"
