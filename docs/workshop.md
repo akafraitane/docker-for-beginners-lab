@@ -1,7 +1,7 @@
 ---
 published: true
 type: workshop
-title: Containers Fundamentals — From Zero to Confidence
+title: Containers Fundamentals, From Zero to Confidence
 short_title: Docker & Podman Lab
 description: Master containerization. Build, secure, and operate containers using Docker CLI and Podman.
 level: beginner
@@ -25,7 +25,7 @@ sections_title:
   - "Appendix: Command Reference"
 ---
 
-# Containers Fundamentals — From Zero to Confidence
+# Containers Fundamentals, From Zero to Confidence
 
 Welcome! In this full-day workshop you will build, ship, and operate containers.
 Each section drops you into a realistic scenario: a broken deployment, a missing database, a service that can't find its neighbor. You solve each one hands-on, and by the end of the day you walk out with the skills and the mental model to containerize your own projects.
@@ -42,27 +42,27 @@ By the end of the day you will be able to:
 
 ## Lab Overview
 
-The story: you just joined a team that ships a small API. It runs fine on dev laptops but breaks everywhere else. Your mission: containerize it, wire it to a database and a cache, prove the data survives a crash, and lock it down — all before the end of the day.
+The story: you just joined a team that ships a small API. It runs fine on dev laptops but breaks everywhere else. Your mission: containerize it, wire it to a database and a cache, prove the data survives a crash, and lock it down, all before the end of the day.
 
 Five hands‑on sections take you from zero to a working stack:
 
-1. Launch your first container — images, containers, ports, inspect
-2. Package your own API — Dockerfiles, layers, caching, non‑root, healthchecks
-3. Operate containers — lifecycle, logs, resource limits
-4. Connect services — custom networks, DNS, service discovery
-5. Persist data + ship a mini‑stack — volumes, DB survival, capstone
+1. Launch your first container, images, containers, ports, inspect
+2. Package your own API, Dockerfiles, layers, caching, non‑root, healthchecks
+3. Operate containers, lifecycle, logs, resource limits
+4. Connect services, custom networks, DNS, service discovery
+5. Persist data + ship a mini‑stack, volumes, DB survival, capstone
 
-> **Checkpoint rule:** every lab ends with a few questions. Take a minute to answer them — if you can't, re-read the section. This is where concepts stick.
+> **Checkpoint rule:** every lab ends with a few questions. Take a minute to answer them, if you can't, re-read the section. This is where concepts stick.
 
 ---
 
 # Kickoff: Why Containers
 
-Before you touch a single command, let's understand why containers exist — and why every team you'll join is already using them (or about to).
+Before you touch a single command, let's understand why containers exist, and why every team you'll join is already using them (or about to).
 
 ## The problem
 
-Environment‑related failures trace back to drift — different runtimes, libraries, OS versions, or configuration drifting silently across machines.
+Environment‑related failures trace back to drift, different runtimes, libraries, OS versions, or configuration drifting silently across machines.
 
 ### The “works on my machine” gap
 
@@ -80,7 +80,7 @@ A container wraps everything your application needs into a standardized, self‑
 - System libraries
 - Configuration
 
-Whatever runs inside the container on your laptop runs identically everywhere else — your colleague's laptop, the CI pipeline, the production server.
+Whatever runs inside the container on your laptop runs identically everywhere else, your colleague's laptop, the CI pipeline, the production server.
 
 ## Containers vs Virtual Machines
 
@@ -90,14 +90,14 @@ The question always comes up: *"How is this different from a VM?"* Short answer:
 
 ## Why Podman
 
-In this workshop we use Podman — a modern, daemonless, rootless container engine that is fully CLI-compatible with Docker. Everything you learn here transfers directly to Docker, but you get a safer default setup and zero licensing concerns.
+In this workshop we use Podman, a modern, daemonless, rootless container engine that is fully CLI-compatible with Docker. Everything you learn here transfers directly to Docker, but you get a safer default setup and zero licensing concerns.
 
 Podman gives you a safer, license‑free container experience:
 
-- Daemonless — no privileged daemon running in the background
-- Rootless by default — safer local development
-- Docker‑CLI compatible — most commands are identical
-- Enterprise‑friendly — no Docker Desktop licensing concerns
+- **Daemonless:** no privileged daemon running in the background
+- **Rootless by default:** safer local development
+- **Docker‑CLI compatible:** most commands are identical
+- **Enterprise‑friendly:** no Docker Desktop licensing concerns
 
 | Feature | Docker | Podman |
 |---------|--------|--------|
@@ -107,7 +107,7 @@ Podman gives you a safer, license‑free container experience:
 | Systemd integration | Separate service | `podman generate systemd` |
 | Desktop licensing | Paid for enterprise | Free |
 
-> Every command in this workshop works with either `podman` or `docker` — set an alias and use whichever you prefer.
+> Every command in this workshop works with either `podman` or `docker`, set an alias and use whichever you prefer.
 
 Now that you know why containers exist, let's get your environment ready.
 
@@ -115,7 +115,7 @@ Now that you know why containers exist, let's get your environment ready.
 
 # Setup: Podman Environment
 
-This section gets your machine ready. Follow the steps for your OS, then run the verification script at the end. Do not skip this — every lab after this point assumes a working Podman installation.
+This section gets your machine ready. Follow the steps for your OS, then run the verification script at the end. Do not skip this, every lab after this point assumes a working Podman installation.
 
 ## Prerequisites
 
@@ -129,11 +129,11 @@ This section gets your machine ready. Follow the steps for your OS, then run the
 ### Windows
 
 ```powershell
-# Option A — winget (recommended)
+# Option A: winget (recommended)
 winget install -e --id RedHat.Podman
 winget install -e --id RedHat.Podman-Desktop
 
-# Option B — Chocolatey
+# Option B: Chocolatey
 choco install podman-cli podman-desktop
 
 # Initialize the Podman VM (runs a small Linux instance under WSL2)
@@ -146,18 +146,18 @@ podman machine start
 ### macOS
 
 ```bash
-# Option A — Homebrew
+# Option A: Homebrew
 brew install podman
 brew install --cask podman-desktop
 
-# Option B — official installer from https://podman.io/
+# Option B: official installer from https://podman.io/
 
 # Initialize the Podman VM (runs under Apple Virtualization)
 podman machine init
 podman machine start
 ```
 
-> **Tip (macOS):** on Apple Silicon Macs, Podman creates an ARM64 Linux VM. Images tagged `amd64` may run slower under emulation — prefer `arm64` or multi-arch images when available.
+> **Tip (macOS):** on Apple Silicon Macs, Podman creates an ARM64 Linux VM. Images tagged `amd64` may run slower under emulation, prefer `arm64` or multi-arch images when available.
 
 ### Linux (Ubuntu/Debian)
 
@@ -185,22 +185,22 @@ Let's verify everything works.
 Run each command below one by one. If any step fails, stop and fix it before continuing. This is your foundation for the rest of the day.
 
 ```bash
-# 1 — Podman is installed
+# 1: Podman is installed
 podman --version
 
-# 2 — Podman can pull and run images
+# 2: Podman can pull and run images
 podman run --rm hello-world
 
-# 3 — Port mapping works
+# 3: Port mapping works
 podman run -d -p 9090:80 --name verify-nginx nginx:alpine
 curl -I http://localhost:9090
 podman rm -f verify-nginx
 
-# 4 — You can build images
+# 4: You can build images
 echo 'FROM alpine:3.19' | podman build -t test-build -
 podman rmi test-build
 
-echo "All checks passed — you're ready."
+echo "All checks passed, you're ready."
 ```
 
 You should see output similar to:
@@ -209,7 +209,7 @@ You should see output similar to:
 podman version 4.x.x
 Hello from Docker!  (or Podman equivalent)
 HTTP/1.1 200 OK
-All checks passed — you're ready.
+All checks passed, you're ready.
 ```
 
 > Trouble? If port mapping fails, check that no other service is using port 9090. Try `podman rm -f verify-nginx` and re-run with a different port (e.g., `-p 9091:80`).
@@ -230,7 +230,7 @@ These aliases let you type `docker` instead of `podman`:
 | Port mapping test | HTTP 200 from Nginx |
 | Build test | Image builds successfully |
 
-> All green? Great — you're ready for the fun part. Let's run your first real container.
+> All green? Great, you're ready for the fun part. Let's run your first real container.
 
 ---
 
@@ -246,10 +246,10 @@ You need Nginx locally to test your app but don’t want to install it on your O
 
 Before we start, let's make sure we speak the same language:
 
-- **Image** — a versioned, immutable (read‑only) artifact stored in a registry. It defines what will run, but is not running itself.
-- **Container** — a running instance of an image, augmented with an isolated, writable layer that exists only for the lifetime of that container.
-- **Ports** — services inside a container are isolated by default; they become accessible externally only when ports are explicitly published to the host (for example, using -p).
-- **Tags vs digests** — tags (such as 1.25-alpine) are mutable references that may point to different builds over time, whereas digests uniquely identify and lock an exact image artifact.
+- **Image:** a versioned, immutable (read‑only) artifact stored in a registry. It defines what will run, but is not running itself.
+- **Container:** a running instance of an image, augmented with an isolated, writable layer that exists only for the lifetime of that container.
+- **Ports:** services inside a container are isolated by default; they become accessible externally only when ports are explicitly published to the host (for example, using -p).
+- **Tags vs digests:** tags (such as 1.25-alpine) are mutable references that may point to different builds over time, whereas digests uniquely identify and lock an exact image artifact.
 
 ### How images and containers relate
 
@@ -257,9 +257,9 @@ Before we start, let's make sure we speak the same language:
 
 ## Lab
 
-Let's run Nginx and observe what happens at every step. Follow along — don't just read the commands, run them.
+Let's run Nginx and observe what happens at every step. Follow along, don't just read the commands, run them.
 
-### Step 1 — Pull a known version
+### Step 1: Pull a known version
 
 ```bash
 podman pull nginx:1.25-alpine
@@ -267,7 +267,7 @@ podman pull nginx:1.25-alpine
 
 You should see Podman downloading the image layers one by one. When it's done, the image is stored locally.
 
-### Step 2 — Inspect the image before running it
+### Step 2: Inspect the image before running it
 
 Always look before you leap. Let's see what's inside:
 
@@ -284,7 +284,7 @@ podman inspect nginx:1.25-alpine --format '
 
 > **Why inspect first?** In production, you want to know the exact size, architecture, and age of every image you run. This habit catches surprises early.
 
-### Step 3 — Run it with a clear port mapping
+### Step 3: Run it with a clear port mapping
 
 ```bash
 podman run -d --name web -p 8080:80 nginx:1.25-alpine
@@ -295,7 +295,7 @@ Explanation:
 - `--name web` gives it a human-friendly name
 - `-p 8080:80` maps port 8080 on your machine to port 80 inside the container (where Nginx listens)
 
-### Step 4 — Validate it works
+### Step 4: Validate it works
 
 ```bash
 curl -I http://localhost:8080
@@ -311,7 +311,7 @@ Server: nginx/1.25.x
 
 If you get a `200 OK`, your container is live and serving traffic.
 
-### Step 5 — Observe (rather than assume)
+### Step 5: Observe (rather than assume)
 
 Now let's look under the hood. These commands are your daily toolkit:
 
@@ -334,13 +334,13 @@ podman diff web
 
 > **Tip:** `podman diff` is underrated. It shows you every file the container has added, changed, or deleted compared to the original image. Very useful for debugging.
 
-### Step 6 — Cleanup
+### Step 6: Cleanup
 
 ```bash
 podman rm -f web
 ```
 
-The container is gone. The image stays — you can spin up a new container from it in under a second.
+The container is gone. The image stays, you can spin up a new container from it in under a second.
 
 ## Checkpoint
 
@@ -353,7 +353,7 @@ The container is gone. The image stays — you can spin up a new container from 
 
 # Concepts Deep Dive
 
-You've run your first container — now let's understand how it works under the hood. This section covers the internals you need to write efficient Dockerfiles and reason about performance.
+You've run your first container, now let's understand how it works under the hood. This section covers the internals you need to write efficient Dockerfiles and reason about performance.
 
 ## Layers and caching
 
@@ -391,7 +391,7 @@ Linux kernel (namespaces, cgroups, overlay filesystems)
 
 > **Why does this matter?** When something goes wrong, knowing which layer handles what helps you debug faster. Network issues? That's the kernel namespace layer. Permission denied? Check user namespaces.
 
-## Namespaces — what each container sees
+## Namespaces: what each container sees
 
 Each container sees its own isolated slice of the system through Linux namespaces.
 
@@ -403,22 +403,22 @@ Each namespace isolates a specific aspect of the system. Here's what they do and
 
 | Namespace | Isolates | What the container sees | Real-world impact |
 |-----------|----------|------------------------|-------------------|
-| PID | Process IDs | Its own process tree starting at PID 1. Cannot see or signal host processes. | `ps aux` inside a container shows only that container's processes — not the hundreds running on the host. |
+| PID | Process IDs | Its own process tree starting at PID 1. Cannot see or signal host processes. | `ps aux` inside a container shows only that container's processes, not the hundreds running on the host. |
 | NET | Network stack | Its own network interfaces, IP addresses, routing tables, and port space. | Two containers can both listen on port 80 without conflicting. Each gets its own `localhost`. |
 | MNT | Filesystem mounts | Its own root filesystem (`/`) assembled from image layers. Cannot see the host's `/etc`, `/home`, etc. | Deleting `/usr` inside a container doesn't touch the host. Bind mounts explicitly punch through this boundary. |
-| UTS | Hostname and domain | Its own hostname (defaults to the container ID). | `hostname` returns the container's name, not the host machine's — useful for logging and service discovery. |
-| IPC | Inter-process communication | Its own shared memory segments, semaphores, and message queues. | Prevents one container's shared memory from leaking into another — critical for multi-tenant workloads. |
+| UTS | Hostname and domain | Its own hostname (defaults to the container ID). | `hostname` returns the container's name, not the host machine's, useful for logging and service discovery. |
+| IPC | Inter-process communication | Its own shared memory segments, semaphores, and message queues. | Prevents one container's shared memory from leaking into another, critical for multi-tenant workloads. |
 | USER | User and group IDs | `root` (UID 0) inside the container maps to an unprivileged user on the host. | Even if an attacker escapes the container as "root", they land as a nobody on the host. This is the foundation of rootless containers. |
 
-## cgroups — what each container is allowed to use
+## cgroups: what each container is allowed to use
 
 Control Groups cap the CPU, memory, and I/O each container can consume.
 
 ![Control Groups (cgroups v2)](assets/CONTROL%20GROUPS%20(cgroups%20v2).png)
 
-### Quick lab — see isolation in action
+### Quick lab: see isolation in action
 
-Let's prove this isn't just theory — run this command and see resource limits in action:
+Let's prove this isn't just theory, run this command and see resource limits in action:
 
 ```bash
 podman run --rm --memory=128m --cpus=0.5 alpine cat /sys/fs/cgroup/memory.max
@@ -441,18 +441,18 @@ This runs a container limited to 128 MB of RAM and half a CPU core, then reads t
 
 # Package Your Own API
 
-So far you've been running someone else's image (Nginx). Now it's time to create your own. This is where containers become truly powerful — you capture your entire application, dependencies included, in a single portable artifact.
+So far you've been running someone else's image (Nginx). Now it's time to create your own. This is where containers become truly powerful, you capture your entire application, dependencies included, in a single portable artifact.
 
 ## Scenario
 
-Your team needs a portable artifact for a small Python API — one that runs identically no matter where it lands: your laptop, CI, staging, production.
+Your team needs a portable artifact for a small Python API, one that runs identically no matter where it lands: your laptop, CI, staging, production.
 
 ## Key concepts
 
-- A Dockerfile is the build recipe for your image — think of it as infrastructure-as-code for your container
+- **Dockerfile:** is the build recipe for your image, think of it as infrastructure-as-code for your container
 - Layer ordering controls caching and rebuild speed
 - Multi‑stage builds strip build tools from the final image, keeping it small and secure
-- A non‑root user enforces least privilege — if someone breaks into your container, they don't get root
+- **Non‑root user:** enforces least privilege, if someone breaks into your container, they don't get root
 - A healthcheck signals when your container is actually ready to serve traffic
 
 ### Choosing a base image
@@ -460,9 +460,9 @@ Your team needs a portable artifact for a small Python API — one that runs ide
 | Base image | Size | Use case |
 |-----------|------|----------|
 | `python:3.11` | ~900 MB | Full toolchain, C extensions, maximum compatibility |
-| `python:3.11-slim` | ~150 MB | Good default — most packages work, much smaller |
+| `python:3.11-slim` | ~150 MB | Good default, most packages work, much smaller |
 | `python:3.11-alpine` | ~50 MB | Smallest, but musl libc can break some C extensions |
-| `gcr.io/distroless/python3` | ~30 MB | No shell, no package manager — hardened |
+| `gcr.io/distroless/python3` | ~30 MB | No shell, no package manager, hardened |
 
 > Start with slim and move to alpine only after you confirm every dependency builds cleanly.
 
@@ -475,18 +475,18 @@ Your team needs a portable artifact for a small Python API — one that runs ide
 
 | Rule | Problem it solves | What happens if you ignore it | Impact |
 |------|-------------------|-------------------------------|--------|
-| **Order matters for caching** | Every time a layer changes, all subsequent layers are rebuilt from scratch. If `COPY . .` comes before `pip install`, every single code edit — even a typo fix — triggers a full dependency reinstall. | A 30-second rebuild turns into a 5-minute rebuild. Multiply that by every developer on the team, every commit, every CI run. | Moving `COPY requirements.txt` before `pip install` means dependencies are only reinstalled when `requirements.txt` actually changes. Code-only edits rebuild in seconds. |
-| **Minimize layers** | Each `RUN` instruction creates a new layer in the image. Temporary files created and deleted in separate `RUN` steps still occupy space in intermediate layers — they're never truly removed. | Three separate `RUN` for update, install, and cleanup produce three layers. The `apt` cache from the first two layers is still baked into the image even after the third layer "deletes" it. | Chaining commands with `&&` in a single `RUN` keeps the install and cleanup in one layer. Files deleted in the same layer never make it into the final image, reducing size by tens or hundreds of MB. |
-| **Use specific tags** | `latest` is a moving target — it points to a different image every time the upstream publishes. Today your build works; tomorrow it breaks because `latest` jumped to a new major version with breaking changes. | Builds are no longer reproducible. Two teammates building the same Dockerfile on the same day can get different base images. Debugging becomes a nightmare. | Pinning to `python:3.11-slim-bookworm` guarantees the same OS, the same Python patch version, and the same system libraries every time — on every machine, in every pipeline. |
+| **Order matters for caching** | Every time a layer changes, all subsequent layers are rebuilt from scratch. If `COPY . .` comes before `pip install`, every single code edit, even a typo fix, triggers a full dependency reinstall. | A 30-second rebuild turns into a 5-minute rebuild. Multiply that by every developer on the team, every commit, every CI run. | Moving `COPY requirements.txt` before `pip install` means dependencies are only reinstalled when `requirements.txt` actually changes. Code-only edits rebuild in seconds. |
+| **Minimize layers** | Each `RUN` instruction creates a new layer in the image. Temporary files created and deleted in separate `RUN` steps still occupy space in intermediate layers, they're never truly removed. | Three separate `RUN` for update, install, and cleanup produce three layers. The `apt` cache from the first two layers is still baked into the image even after the third layer "deletes" it. | Chaining commands with `&&` in a single `RUN` keeps the install and cleanup in one layer. Files deleted in the same layer never make it into the final image, reducing size by tens or hundreds of MB. |
+| **Use specific tags** | `latest` is a moving target, it points to a different image every time the upstream publishes. Today your build works; tomorrow it breaks because `latest` jumped to a new major version with breaking changes. | Builds are no longer reproducible. Two teammates building the same Dockerfile on the same day can get different base images. Debugging becomes a nightmare. | Pinning to `python:3.11-slim-bookworm` guarantees the same OS, the same Python patch version, and the same system libraries every time, on every machine, in every pipeline. |
 | **Use .dockerignore** | The Docker/Podman build context is everything in the directory you pass to `build`. Without `.dockerignore`, that includes `.git/` (often 100+ MB), `node_modules/`, test fixtures, local `.env` files with secrets, and IDE config. | Build context transfer is slow (you'll see "Sending build context to daemon... 500 MB"). Worse, secrets in `.env` or `.git/config` end up inside the image where anyone with access can extract them. | A well-crafted `.dockerignore` keeps the build context small (fast uploads) and prevents sensitive files from leaking into the image. Think of it as `.gitignore` for your container builds. |
 
-> **Rule of thumb:** if your image is over 500 MB or your builds take more than 60 seconds, revisit these four rules — at least one is being violated.
+> **Rule of thumb:** if your image is over 500 MB or your builds take more than 60 seconds, revisit these four rules, at least one is being violated.
 
 ## Lab: Build a Python API image
 
 This is the most important lab of the workshop. You'll create four files, build a production-quality image, and understand every line of the Dockerfile.
 
-> **Important:** create these files in a new empty directory — don't mix them with other projects.
+> **Important:** create these files in a new empty directory, don't mix them with other projects.
 
 ### Artefacts
 
@@ -564,14 +564,14 @@ What's happening here?
 
 | Instruction | Why |
 |-------------|-----|
-| `AS builder` | Creates a temporary stage — only its output (`/root/.local`) is copied into the final image |
+| `AS builder` | Creates a temporary stage, only its output (`/root/.local`) is copied into the final image |
 | `--user` in pip install | Installs into `~/.local` so we can copy just the packages (no pip cache or build tools) |
-| `useradd appuser` | The container runs as a non-root user — defense in depth |
-| `COPY --from=builder` | Only the installed packages cross into the final image — no compiler, no pip, no cache |
+| `useradd appuser` | The container runs as a non-root user, defense in depth |
+| `COPY --from=builder` | Only the installed packages cross into the final image, no compiler, no pip, no cache |
 | `HEALTHCHECK` | Podman (and orchestrators) will probe `/health` to know if the app is actually ready |
-| `gunicorn` | Production WSGI server instead of Flask's dev server — handles concurrent requests |
+| `gunicorn` | Production WSGI server instead of Flask's dev server, handles concurrent requests |
 
-> **Why multi-stage?** Without it, your final image contains pip, compilers, and build caches — hundreds of MB you don't need at runtime. Multi-stage keeps only what matters.
+> **Why multi-stage?** Without it, your final image contains pip, compilers, and build caches, hundreds of MB you don't need at runtime. Multi-stage keeps only what matters.
 
 `.dockerignore`
 
@@ -596,7 +596,7 @@ podman build --format docker -t workshop-api:1.0.0 .
 You should see each layer being built. The first build downloads the base image; subsequent builds are much faster thanks to caching.
 
 ```bash
-# Check the image size — should be ~170 MB (not 900+ MB!)
+# Check the image size: should be ~170 MB (not 900+ MB!)
 podman images workshop-api:1.0.0
 
 # Start the container
@@ -617,10 +617,10 @@ You should see JSON output like:
 Now verify your security and optimization choices are working:
 
 ```bash
-# Confirm non-root — should print "appuser", NOT "root"
+# Confirm non-root: should print "appuser", NOT "root"
 podman exec api whoami
 
-# Inspect layers — notice how few there are compared to a single-stage build
+# Inspect layers: notice how few there are compared to a single-stage build
 podman history workshop-api:1.0.0
 
 podman rm -f api
@@ -661,13 +661,13 @@ Your containers are running in a dev environment. A teammate reports that one se
 
 ![Container Lifecycle](assets/Container%20Lifecycle.png)
 
-- **Lifecycle** — a container moves through created → running → stopped → removed
-- **Health** — a passing HEALTHCHECK tells you the container is actually ready
-- **Limits** — resource caps prevent a single container from starving the host
+- **Lifecycle:** a container moves through created → running → stopped → removed
+- **Health:** a passing HEALTHCHECK tells you the container is actually ready
+- **Limits:** resource caps prevent a single container from starving the host
 
 ## Useful commands
 
-These are the commands you'll reach for every day. Bookmark this section — you'll come back to it.
+These are the commands you'll reach for every day. Bookmark this section, you'll come back to it.
 
 ```bash
 podman ps                                 # Running containers
@@ -690,7 +690,7 @@ podman run -d --name limited \
   --cpus=1 \
   nginx:alpine
 
-# Check stats — notice the MEM LIMIT column
+# Check stats: notice the MEM LIMIT column
 podman stats --no-stream limited
 ```
 
@@ -720,11 +720,11 @@ podman rm -f limited
 
 # Connect Services (Networking)
 
-So far every container you've run was alone. In the real world, services talk to each other: an API calls a database, a web app hits a cache. This section teaches you how containers find and communicate with each other — safely, by name, on an isolated network.
+So far every container you've run was alone. In the real world, services talk to each other: an API calls a database, a web app hits a cache. This section teaches you how containers find and communicate with each other, safely, by name, on an isolated network.
 
 ## Scenario
 
-Your API needs a database and a cache. All three services need to discover each other by name — no hardcoded IP addresses, no manual configuration.
+Your API needs a database and a cache. All three services need to discover each other by name, no hardcoded IP addresses, no manual configuration.
 
 ## Key concepts
 
@@ -732,12 +732,12 @@ Your API needs a database and a cache. All three services need to discover each 
 
 ![Container Network Types](assets/Container%20Network%20Types.png)
 
-- **Custom bridge** — your go-to for multi-service setups, giving you DNS by container name
-- **Default bridge** — no DNS here; containers must hardcode IP addresses
-- **Host** — the container shares your host’s network stack directly, with no isolation
-- **None** — cuts off all networking, useful for processing-only containers
+- **Custom bridge:** your go-to for multi-service setups, giving you DNS by container name
+- **Default bridge:** no DNS here; containers must hardcode IP addresses
+- **Host:** the container shares your host’s network stack directly, with no isolation
+- **None:** cuts off all networking, useful for processing-only containers
 
-> **Beyond Bridge, Host, and None:** these three modes cover the vast majority of local development scenarios and are the ones used throughout this workshop. However, container networking goes much further — runtimes support additional modes like Macvlan, IPvlan, and container-to-container sharing, while orchestrators (Kubernetes, Docker Swarm, Nomad) and cloud platforms introduce overlay networks, service meshes, and their own CNI plugins. The networking options available to you ultimately depend on the container runtime, the orchestrator, and the platform on which you deploy.
+> **Beyond Bridge, Host, and None:** these three modes cover the vast majority of local development scenarios and are the ones used throughout this workshop. However, container networking goes much further, runtimes support additional modes like Macvlan, IPvlan, and container-to-container sharing, while orchestrators (Kubernetes, Docker Swarm, Nomad) and cloud platforms introduce overlay networks, service meshes, and their own CNI plugins. The networking options available to you ultimately depend on the container runtime, the orchestrator, and the platform on which you deploy.
 
 ### DNS & service discovery
 
@@ -823,11 +823,11 @@ podman network rm shop-network
 
 What you should see:
 
-- The `ping` commands succeed — each container resolves the other's name via DNS
-- `curl localhost:8080` returns the Nginx welcome page — only the API's port is published
+- The `ping` commands succeed, each container resolves the other's name via DNS
+- `curl localhost:8080` returns the Nginx welcome page, only the API's port is published
 - The network topology shows three containers with internal IPs (e.g., `10.89.0.2/24`, `10.89.0.3/24`, `10.89.0.4/24`)
 
-> **Notice:** neither the database nor Redis has a `-p` flag. They are only reachable from inside `shop-network` — which is exactly what you want in production. Only the front-facing service exposes a port.
+> **Notice:** neither the database nor Redis has a `-p` flag. They are only reachable from inside `shop-network`, which is exactly what you want in production. Only the front-facing service exposes a port.
 
 ## Checkpoint
 
@@ -839,38 +839,38 @@ What you should see:
 
 # Persist Data + Capstone Stack
 
-Here's the thing about containers: they're ephemeral by design. When a container stops, its writable layer vanishes. That's great for reproducibility — terrible if your database was inside it. This section teaches you how to make data survive the container lifecycle, and then puts everything together in a capstone exercise.
+Here's the thing about containers: they're ephemeral by design. When a container stops, its writable layer vanishes. That's great for reproducibility, terrible if your database was inside it. This section teaches you how to make data survive the container lifecycle, and then puts everything together in a capstone exercise.
 
-## Part A — Persistence (Volumes)
+## Part A: Persistence (Volumes)
 
 ### Scenario
 
-Imagine your Postgres container crashes at 3 AM. It restarts automatically — but all your customer data is gone because it was stored inside the container's writable layer. Let's make sure that never happens.
+Imagine your Postgres container crashes at 3 AM. It restarts automatically, but all your customer data is gone because it was stored inside the container's writable layer. Let's make sure that never happens.
 
 ### Key concepts
 
 ![Container Storage Options](assets/Container%20Storage%20Options.png)
 
-> **Beyond Volumes, Bind Mounts, and tmpfs:** these three storage types are universal concepts supported by every major container runtime and cover the vast majority of local development scenarios — which is why this workshop focuses on them. However, container storage goes much further once you move to orchestrated environments. Kubernetes, for example, introduces PersistentVolumes, PersistentVolumeClaims, and StorageClasses that decouple storage provisioning from the application entirely. Cloud platforms add their own managed options — Azure Disks, AWS EBS, GCE Persistent Disks — while distributed filesystems like NFS, Ceph, and Longhorn provide storage across clusters. The storage options available to you ultimately depend on the container runtime, the orchestrator, and the infrastructure on which you deploy.
+> **Beyond Volumes, Bind Mounts, and tmpfs:** these three storage types are universal concepts supported by every major container runtime and cover the vast majority of local development scenarios, which is why this workshop focuses on them. However, container storage goes much further once you move to orchestrated environments. Kubernetes, for example, introduces PersistentVolumes, PersistentVolumeClaims, and StorageClasses that decouple storage provisioning from the application entirely. Cloud platforms add their own managed options, Azure Disks, AWS EBS, GCE Persistent Disks, while distributed filesystems like NFS, Ceph, and Longhorn provide storage across clusters. The storage options available to you ultimately depend on the container runtime, the orchestrator, and the infrastructure on which you deploy.
 
 ### Lab: Prove database persistence
 
 #### The business context
 
-A common operational pattern with containerized databases is **immutable infrastructure**: instead of patching a running container in place, you pull a new image, destroy the old container, and start a fresh one from the updated image. This approach guarantees reproducibility — but it introduces a critical risk: any data stored inside the container's writable layer is lost when that container is removed.
+A common operational pattern with containerized databases is **immutable infrastructure**: instead of patching a running container in place, you pull a new image, destroy the old container, and start a fresh one from the updated image. This approach guarantees reproducibility, but it introduces a critical risk: any data stored inside the container's writable layer is lost when that container is removed.
 
-Consider a product catalog service backed by PostgreSQL. During a routine version upgrade, the operations pipeline replaces the database container. If the data directory (`/var/lib/postgresql/data`) lives inside the container, the entire catalog — products, prices, inventory — is destroyed with it. The replacement container initializes a blank database. From the application's perspective, the catalog is empty. From the business's perspective, the service is down.
+Consider a product catalog service backed by PostgreSQL. During a routine version upgrade, the operations pipeline replaces the database container. If the data directory (`/var/lib/postgresql/data`) lives inside the container, the entire catalog, products, prices, inventory, is destroyed with it. The replacement container initializes a blank database. From the application's perspective, the catalog is empty. From the business's perspective, the service is down.
 
 This class of incident is well-documented and entirely preventable. The solution is to **decouple the container lifecycle from the data lifecycle** by mounting the database data directory on an external named volume. The volume is managed by the container runtime independently of any container: it persists across container removals, can be backed up, and can be attached to any new container.
 
 #### What this lab demonstrates
 
-You will reproduce the exact upgrade scenario described above — with the correct architecture already in place:
+You will reproduce the exact upgrade scenario described above, with the correct architecture already in place:
 
 1. **Provision a named volume** (`pg-data`) to hold the database files externally.
 2. **Start a PostgreSQL container** with the volume mounted at `/var/lib/postgresql/data`.
-3. **Insert structured data** — a table and a record representing a catalog entry.
-4. **Remove the container** — simulating a crash, a version upgrade, or a scheduled teardown.
+3. **Insert structured data:** a table and a record representing a catalog entry.
+4. **Remove the container:** simulating a crash, a version upgrade, or a scheduled teardown.
 5. **Start a new container** attached to the same volume and verify the data is intact.
 
 The key principle: **separating compute from state** allows containers to remain disposable while data remains durable.
@@ -888,7 +888,7 @@ podman run -d \
 
 sleep 5
 
-# Insert structured data — a catalog entry
+# Insert structured data: a catalog entry
 podman exec pg psql -U postgres -c "
 CREATE TABLE workshop (
     id SERIAL PRIMARY KEY,
@@ -899,7 +899,7 @@ INSERT INTO workshop (name) VALUES ('Container Workshop');
 SELECT * FROM workshop;
 "
 
-# Remove the container — simulating a version upgrade or crash
+# Remove the container: simulating a version upgrade or crash
 podman rm -f pg
 echo "Container removed."
 
@@ -921,9 +921,9 @@ podman rm -f pg2
 podman volume rm pg-data
 ```
 
-**Expected result:** the `SELECT` query returns the row inserted earlier (`Container Workshop`), confirming that the data persisted across container destruction. The volume — not the container — owns the state.
+**Expected result:** the `SELECT` query returns the row inserted earlier (`Container Workshop`), confirming that the data persisted across container destruction. The volume, not the container, owns the state.
 
-> **Key takeaway:** in production, every stateful service — databases, message brokers, file stores — must have its data directory mounted on an external volume. Containers are ephemeral by design; volumes are not. Without this separation, any container removal, intentional or not, results in irreversible data loss.
+> **Key takeaway:** in production, every stateful service, databases, message brokers, file stores, must have its data directory mounted on an external volume. Containers are ephemeral by design; volumes are not. Without this separation, any container removal, intentional or not, results in irreversible data loss.
 
 ### Checkpoint
 
@@ -931,29 +931,29 @@ podman volume rm pg-data
 - What survives: container? image? volume?
 - When would you use a bind mount instead of a named volume?
 
-## Part B — Capstone: Mini E‑Commerce Backend (Postgres + Redis + API)
+## Part B: Capstone, Mini E‑Commerce Backend (Postgres + Redis + API)
 
-This is the grand finale. Everything you've learned — images, Dockerfiles, networking, volumes, health checks — comes together in one working application.
+This is the grand finale. Everything you've learned, images, Dockerfiles, networking, volumes, health checks, comes together in one working application.
 
 ### Scenario
 
 You're building a minimal e-commerce backend from scratch:
 
-- Postgres — stores product and order data
-- Redis — caches visit counts for fast reads
-- Flask API — exposes endpoints that talk to both
+- **Postgres:** stores product and order data
+- **Redis:** caches visit counts for fast reads
+- **Flask API:** exposes endpoints that talk to both
 
 ### Key concepts
 
 - Services share one custom network and discover each other by container name (DNS)
-- Health checks signal when each service is actually ready — not just "running"
-- Each container runs exactly one process — the Unix philosophy applied to containers
+- **Health checks:** signal when each service is actually ready, not just "running"
+- **Single process per container:** follows the Unix philosophy applied to containers
 
 ### Lab: Build the full stack
 
 This is a longer lab, but take your time. Each block builds on the previous one. By the end you'll have a three-service application running and talking to each other.
 
-This lab ties together everything from the workshop — images, networking, volumes, and health checks — into one running stack.
+This lab ties together everything from the workshop, images, networking, volumes, and health checks, into one running stack.
 
 ```bash
 # ═══════════════════════════════════════════════════
@@ -1129,20 +1129,20 @@ echo "Cleanup complete!"
 
 # Security Wrap + Next Steps
 
-You've built and deployed a multi-service stack. Before you go to production, there's one more topic: security. Most container breaches happen because of simple misconfigurations — running as root, exposing unnecessary ports, or baking secrets into images. This checklist keeps you safe.
+You've built and deployed a multi-service stack. Before you go to production, there's one more topic: security. Most container breaches happen because of simple misconfigurations, running as root, exposing unnecessary ports, or baking secrets into images. This checklist keeps you safe.
 
 ## Container security checklist
 
 ![Container Security Checklist](assets/Container%20Security%20Checklist.png)
 
-> **Beyond local runtime flags:** the security principles in this checklist are universal — they apply whether you run containers locally with Podman or Docker, or at scale on Kubernetes, Nomad, or a managed platform. In orchestrated environments, enforcement shifts from CLI flags to declarative manifests: Pod Security Standards replace `--cap-drop`, NetworkPolicies replace custom bridge networks, and Kubernetes Secrets or external vaults (Azure Key Vault, AWS Secrets Manager, HashiCorp Vault) replace runtime secret injection. The controls are the same — only the mechanism changes.
+> **Beyond local runtime flags:** the security principles in this checklist are universal, they apply whether you run containers locally with Podman or Docker, or at scale on Kubernetes, Nomad, or a managed platform. In orchestrated environments, enforcement shifts from CLI flags to declarative manifests: Pod Security Standards replace `--cap-drop`, NetworkPolicies replace custom bridge networks, and Kubernetes Secrets or external vaults (Azure Key Vault, AWS Secrets Manager, HashiCorp Vault) replace runtime secret injection. The controls are the same, only the mechanism changes.
 
 ## Secure container launch
 
 Here's what a production-hardened container launch looks like with a local runtime. Every flag has a purpose:
 
 ```bash
-# Local runtime — production-secure launch
+# Local runtime: production-secure launch
 podman run \
   --name secure-app \
   --user 1000:1000 \
@@ -1172,10 +1172,10 @@ Each flag hardens the container in a specific way:
 | `--pids-limit 50` | Prevent fork bombs |
 | `-p 127.0.0.1:8080:8080` | Bind to localhost only |
 
-The same hardening expressed as a Kubernetes `securityContext` — the concepts map one-to-one:
+The same hardening expressed as a Kubernetes `securityContext`, the concepts map one-to-one:
 
 ```yaml
-# Kubernetes — equivalent security controls in a Pod spec
+# Kubernetes: equivalent security controls in a Pod spec
 apiVersion: v1
 kind: Pod
 metadata:
@@ -1198,7 +1198,7 @@ spec:
         - containerPort: 8080
 ```
 
-> **Tip:** On Kubernetes, cluster-level controls such as Pod Security Admission (Baseline / Restricted profiles), RBAC, and NetworkPolicies enforce these rules across every workload — no need to remember flags on every launch.
+> **Tip:** On Kubernetes, cluster-level controls such as Pod Security Admission (Baseline / Restricted profiles), RBAC, and NetworkPolicies enforce these rules across every workload, no need to remember flags on every launch.
 
 ## What you've mastered
 
@@ -1215,7 +1215,7 @@ spec:
 
 ## Resources
 
-Keep these bookmarked — you'll come back to them often:
+Keep these bookmarked, you'll come back to them often:
 
 - Podman Documentation: <https://docs.podman.io/>
 - Kubernetes: <https://kubernetes.io/docs/>
